@@ -1,0 +1,25 @@
+Ausgabe für Aufgabe 1:
+Dreieck
+Fläche des Gitterpolygons mit 3.0 Randpunkten: 0.5
+
+Quadrat
+Fläche des Gitterpolygons mit 4.0 Randpunkten: 1.0
+
+Achteck
+Fläche des Gitterpolygons mit 8.0 Randpunkten: 7.0
+
+Vieleck
+Fläche des Gitterpolygons mit 12.0 Randpunkten: 18.0
+
+schiefes Quadrat
+Fläche des Gitterpolygons mit 8.0 Randpunkten: 8.0
+
+random Polygon
+Fläche des Gitterpolygons mit 7.0 Randpunkten: 4.5
+
+random Polygon 2
+Fläche des Gitterpolygons mit 8.0 Randpunkten: 12.0
+
+trying negative coordinates // should have same Area as random Polygon 2
+Fläche des Gitterpolygons mit 8.0 Randpunkten: 12.0
+

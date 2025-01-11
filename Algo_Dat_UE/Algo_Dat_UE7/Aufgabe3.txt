@@ -1,0 +1,21 @@
+n=1  josephus(1): 1 
+n=1  josephus(5): 1 
+n=5  josephus(1): 1 2 3 4 5 
+n=7  josephus(11): 4 2 3 7 5 6 1 
+n=19  josephus(2): 2 4 6 8 10 12 14 16 18 1 5 9 13 17 3 11 19 15 7 
+n=41  josephus(3): 3 6 9 12 15 18 21 24 27 30 33 36 39 1 5 10 14 19 23 28 32 37 41 7 13 20 26 34 40 8 17 29 38 11 25 2 22 4 35 16 31 
+
+n=1  josephusThereAndBack(1): 1 
+n=1  josephusThereAndBack(5): 1 
+n=5  josephusThereAndBack(1): 1 5 2 4 3 
+n=7  josephusThereAndBack(11): 4 6 7 2 5 3 1 
+n=19  josephusThereAndBack(2): 2 19 3 18 4 17 5 16 6 15 7 14 8 13 9 12 10 11 1 
+n=41  josephusThereAndBack(3): 3 41 4 40 5 39 6 38 7 37 8 36 9 35 10 34 11 33 12 32 13 31 14 30 15 29 16 28 17 27 18 26 19 25 20 24 21 23 22 2 1
+
+n=1  josephusThereAndBack(1):
+1 n=1  josephusThereAndBack(5):
+1 n=5  josephusThereAndBack(1):
+1 5 2 4 3 n=7  josephusThereAndBack(11):
+4 6 7 2 5 3 1 n=19  josephusThereAndBack(2):
+2 19 3 18 4 17 5 16 6 15 7 14 8 13 9 12 10 11 1 n=41  josephusThereAndBack(3):
+3 41 4 40 5 39 6 38 7 37 8 36 9 35 10 34 11 33 12 32 13 31 14 30 15 29 16 28 17 27 18 26 19 25 20 24 21 23 22 2 1 

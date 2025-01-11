@@ -1,0 +1,40 @@
+Listenlänge: 0
+--------------
+SingleLinkedList().toDoubleLinkedList(): <>
+SingleLinkedList().invert(): <>
+SingleLinkedList().toArray(): []
+
+DoubleLinkedList().toSingleLinkedList(): <>
+DoubleLinkedList().invert(): <>
+DoubleLinkedList().toArray(): []
+
+Listenlänge: 1
+--------------
+SingleLinkedList().toDoubleLinkedList(): <1>
+SingleLinkedList().invert(): <1>
+SingleLinkedList().toArray(): [1]
+
+DoubleLinkedList().toSingleLinkedList(): <1>
+DoubleLinkedList().invert(): <1>
+DoubleLinkedList().toArray(): [1]
+
+Listenlänge: 2
+--------------
+SingleLinkedList().toDoubleLinkedList(): <1, 2>
+SingleLinkedList().invert(): <2, 1>
+SingleLinkedList().toArray(): [1, 2]
+
+DoubleLinkedList().toSingleLinkedList(): <1, 2>
+DoubleLinkedList().invert(): <2, 1>
+DoubleLinkedList().toArray(): [1, 2]
+
+Listenlänge: 9
+--------------
+SingleLinkedList().toDoubleLinkedList(): <1, 2, 3, 4, 5, 6, 7, 8, 9>
+SingleLinkedList().invert(): <9, 8, 7, 6, 5, 4, 3, 2, 1>
+SingleLinkedList().toArray(): [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+DoubleLinkedList().toSingleLinkedList(): <1, 2, 3, 4, 5, 6, 7, 8, 9>
+DoubleLinkedList().invert(): <9, 8, 7, 6, 5, 4, 3, 2, 1>
+DoubleLinkedList().toArray(): [1, 2, 3, 4, 5, 6, 7, 8, 9]
+

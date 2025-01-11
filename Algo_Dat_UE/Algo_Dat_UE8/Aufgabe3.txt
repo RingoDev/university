@@ -1,0 +1,9 @@
+Aufgabe 3 - Nächstgrößerer Wert
+
+nextHigherValue von 2: 4
+nextHigherValue von 4: 7
+nextHigherValue von 10: 11
+nextHigherValue von 12: 15
+nextHigherValue von 19: 25
+nextHigherValue von 28: -1
+nextHigherValue von 30: -1

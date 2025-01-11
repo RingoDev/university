@@ -1,0 +1,43 @@
+Ausgabe für Aufgabe 1:
+Average Schleifendurchläufe bei Array Länge 0: 0.0
+
+Average Schleifendurchläufe bei Array Länge 1: 1.0
+
+Average Schleifendurchläufe bei Array Länge 2: 1.67
+
+Average Schleifendurchläufe bei Array Länge 3: 2.11
+
+Average Schleifendurchläufe bei Array Länge 4: 2.41
+
+Average Schleifendurchläufe bei Array Länge 5: 2.6
+
+Average Schleifendurchläufe bei Array Länge 6: 2.73
+
+Average Schleifendurchläufe bei Array Länge 7: 2.82
+
+Average Schleifendurchläufe bei Array Länge 8: 2.89
+
+Average Schleifendurchläufe bei Array Länge 9: 2.92
+
+Average Schleifendurchläufe bei Array Länge 10: 2.95
+
+Average Schleifendurchläufe bei Array Länge 11: 2.97
+
+Average Schleifendurchläufe bei Array Länge 12: 2.98
+
+Average Schleifendurchläufe bei Array Länge 13: 2.98
+
+Average Schleifendurchläufe bei Array Länge 14: 3.0
+
+Average Schleifendurchläufe bei Array Länge 15: 3.0
+
+Average Schleifendurchläufe bei Array Länge 16: 3.0
+
+Average Schleifendurchläufe bei Array Länge 17: 3.0
+
+Average Schleifendurchläufe bei Array Länge 18: 3.0
+
+Average Schleifendurchläufe bei Array Länge 19: 3.0
+
+Average Schleifendurchläufe bei Array Länge 20: 3.01
+

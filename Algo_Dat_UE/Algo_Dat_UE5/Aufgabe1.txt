@@ -1,0 +1,79 @@
+Rundfahrt in der ursprünglichen Reihenfolge der Gemeinden:
+
+4072 Alkhoven 14.1 km
+4082 Aschach 7.6 km
+4070 Eferding 3.1 km
+4072 Fraham 19.6 km
+4083 Haibach 9.2 km
+4081 Hartkirchen 6.7 km
+4070 Hinzenbach 9.2 km
+4731 Prambachkirchen 11.5 km
+4070 Pupping 11.1 km
+4612 Scharten 10.5 km
+4076 St.Marienkirchen 12.0 km
+4074 Stroheim 15.0 km
+4072 Alkhoven
+
+Länge der Rundfahrt: 129.6 km
+
+===================================================================================
+
+Fahrt zur jeweils nächstgelegenen Gemeinde beginnend mit Alkhoven:
+
+4072 Alkhoven 6.1 km
+4072 Fraham 3.1 km
+4070 Eferding 1.4 km
+4070 Hinzenbach 3.4 km
+4070 Pupping 3.4 km
+4081 Hartkirchen 2.2 km
+4082 Aschach 7.6 km
+4074 Stroheim 6.1 km
+4731 Prambachkirchen 7.4 km
+4076 St.Marienkirchen 10.5 km
+4612 Scharten 24.0 km
+4083 Haibach 24.9 km
+4072 Alkhoven
+
+Länge der Rundfahrt: 100.1 km
+
+===================================================================================
+
+Fahrt zur jeweils nächstgelegenen Gemeinde beginnend mit der optimal gelegenen Gemeinde:
+
+4074 Stroheim 5.1 km
+4070 Pupping 3.4 km
+4081 Hartkirchen 2.2 km
+4082 Aschach 7.6 km
+4070 Eferding 1.4 km
+4070 Hinzenbach 4.6 km
+4072 Fraham 4.1 km
+4612 Scharten 8.7 km
+4072 Alkhoven 15.5 km
+4076 St.Marienkirchen 7.4 km
+4731 Prambachkirchen 16.2 km
+4083 Haibach 13.4 km
+4074 Stroheim
+
+Länge der Rundfahrt: 89.6 km
+
+===================================================================================
+
+Optimale Rundfahrt mit Backtracking:
+
+4081 Hartkirchen 2.2 km
+4082 Aschach 4.7 km
+4070 Pupping 3.4 km
+4070 Hinzenbach 1.4 km
+4070 Eferding 3.1 km
+4072 Fraham 6.1 km
+4072 Alkhoven 8.7 km
+4612 Scharten 10.5 km
+4076 St.Marienkirchen 7.4 km
+4731 Prambachkirchen 6.1 km
+4074 Stroheim 13.4 km
+4083 Haibach 9.2 km
+4081 Hartkirchen
+
+Länge der Rundfahrt: 76.2 km
+
+Anzahl der rekursiven Aufrufe der Backtracking-Funktion: 4307438

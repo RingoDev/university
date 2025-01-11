@@ -1,0 +1,1 @@
+Some porject files relevant to a Seminar papaer on Natural language processing and visualization with Neo4j

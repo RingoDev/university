@@ -1,0 +1,26 @@
+Aufgabe 2 - Knoten zählen
+
+Leerer Baum
+------------------------
+a) numberOfNodes: 0
+b) numberOfLeaves: 0
+c) numberOfInnerNodes: 0
+
+Ein Knoten
+------------------------
+a) numberOfNodes: 1
+b) numberOfLeaves: 1
+c) numberOfInnerNodes: 0
+
+Zwei Knoten
+------------------------
+a) numberOfNodes: 2
+b) numberOfLeaves: 1
+c) numberOfInnerNodes: 0
+
+Baum aus Aufgabe 1
+------------------------
+a) numberOfNodes: 15
+b) numberOfLeaves: 8
+c) numberOfInnerNodes: 6
+

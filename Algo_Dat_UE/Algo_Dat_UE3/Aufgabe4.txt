@@ -1,0 +1,36 @@
+n: -1
+java.lang.IllegalArgumentException: Value is smaller than 1
+
+n: 0
+java.lang.IllegalArgumentException: Value is smaller than 1
+
+n: 1
+Triangles: 1
+
+n: 2
+Triangles: 4
+
+n: 3
+Triangles: 13
+
+n: 4
+Triangles: 40
+
+n: 5
+Triangles: 121
+
+n: 6
+Triangles: 364
+
+n: 7
+Triangles: 1093
+
+n: 8
+Triangles: 3280
+
+n: 9
+Triangles: 9841
+
+n: 10
+Triangles: 29524
+
