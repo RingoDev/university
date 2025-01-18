@@ -1,0 +1,9 @@
+2020 03 08 "Program SW2 assignment 1"
+2020 03 09 "Attend SW2 class"
+2020 03 02 "Attend SW2 class"
+2020 03 10 "Study inheritance in Java"
+2020 03 03 "Study packages in Java"
+2020 03 09 "Attend SW2 lecture"
+2020 03 14 "Program SW2 assignment 2"
+2020 03 09 "Submit SW2 assignment 1"
+  
