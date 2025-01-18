@@ -1,0 +1,6 @@
+# Project exclude paths
+/out/
+.env
+JKU_mms_project.iml
+.idea
+/data/codecs.txt

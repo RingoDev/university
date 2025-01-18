@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="main" spacing="10.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JKU_MMS.Controller.Controller">
+      <VBox spacing="5.0">
+         	<BorderPane>
+         		<center>
+         			<Label text="File Options" BorderPane.Alignment="CENTER">
+         				<font>
+                        	<Font name="System Bold" size="14.0" />
+                     	</font>
+         			</Label>
+         		</center>
+         	</BorderPane>
+         	<BorderPane>
+         		<left>
+         			<Label prefWidth="100.0" text="Input file:" BorderPane.Alignment="CENTER_LEFT" />
+         		</left>
+         		<center>
+         			<TextField fx:id="inputFile" prefWidth="500.0" promptText="test.mp4">test.mp4
+         			<BorderPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </BorderPane.margin>
+                    </TextField>
+         		</center>
+         		<right>
+         			<Button fx:id="inputChooser" prefWidth="150.0">Browse</Button>
+         		</right>
+         	</BorderPane>
+         	<BorderPane>
+         		<left>
+         			<Label prefWidth="100.0" text="Output path:" BorderPane.Alignment="CENTER_LEFT" />
+         		</left>
+         		<center>
+         			<TextField fx:id="outputPath" prefWidth="500.0">
+         			<BorderPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </BorderPane.margin>
+                </TextField>
+         		</center>
+         		<right>
+         			<Button fx:id="outputChooser" prefWidth="150.0">Browse</Button>
+         		</right>
+         	</BorderPane>
+       </VBox>
+      <BorderPane minHeight="230.0" prefWidth="770.0" VBox.vgrow="NEVER">
+         <top>
+       	   <Label text="Encoding Options" BorderPane.alignment="CENTER">
+             <font>
+               <Font name="System Bold" size="14.0" />
+             </font>
+             <padding>
+               <Insets bottom="10.0" />
+             </padding>
+            </Label>
+         </top>
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="190.0" prefHeight="190.0" vgrow="NEVER" />
+              </rowConstraints>
+                  <BorderPane>
+                     <top>
+                  			<Label alignment="CENTER" text="Profile Settings" BorderPane.alignment="CENTER">
+                  				<font>
+                  					<Font name="System Bold" size="12.0" />
+                  				</font>
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin>
+                  			</Label>
+                     </top>
+                     <center>
+                        <GridPane BorderPane.alignment="CENTER">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                           </rowConstraints>
+                              <Label />
+                              <Label GridPane.rowIndex="1" />
+                              <Label GridPane.rowIndex="2" />
+                              <Label GridPane.rowIndex="3" />
+                              <Label GridPane.rowIndex="4" />
+                        <Button fx:id="createProfile" mnemonicParsing="false" prefHeight="500.0" prefWidth="400.0" text="save profile as:" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <ChoiceBox fx:id="chooseProfile" prefWidth="1000.0" GridPane.columnIndex="1" />
+                        <Label text="Choose profile">Choose profile:</Label>
+                        <TextField fx:id="newProfileName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="1">
+                     <top>
+                        <Label alignment="CENTER" text="Video Settings" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <GridPane BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                          </rowConstraints>
+                         <Label>Remove Subtitles?</Label>
+                         <RadioButton fx:id="subtitlesButton" mnemonicParsing="false" prefWidth="125.0" GridPane.columnIndex="1" />
+                         <Label GridPane.rowIndex="2">Video Codec</Label>
+                         <ComboBox fx:id="chooseVideoCodec" prefWidth="1000.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                         <TextField fx:id="videoWidth" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                         <Label GridPane.rowIndex="5">Width</Label>
+                         <Label GridPane.rowIndex="4">Height</Label>
+                         <TextField fx:id="videoHeight" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                         <Label GridPane.rowIndex="3">Framerate</Label>
+                         <TextField fx:id="frameRate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Format " GridPane.rowIndex="1" />
+                              <ComboBox fx:id="chooseFormat" prefWidth="1000.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        </GridPane>
+                     </center>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </BorderPane>
+                  <BorderPane prefWidth="200.0" GridPane.columnIndex="2">
+                     <top>
+                        <Label text="Audio Settings" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <GridPane prefHeight="183.0" prefWidth="79.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                          </rowConstraints>
+                              <Label text="Remove Audio?" />
+                              <RadioButton fx:id="audioButton" mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Audio Codec" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="chooseAudioCodec" prefWidth="1000.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Samplerate" GridPane.rowIndex="3" />
+                              <TextField fx:id="samplerateText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Bitrate" GridPane.rowIndex="2" />
+                              <TextField fx:id="bitrateText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+            </GridPane>
+         </center>
+      </BorderPane>
+      <HBox spacing="5.0" VBox.vgrow="NEVER">
+               <Button fx:id="addTask" prefWidth="150.0" text="Add Task" />
+               <Button fx:id="process" prefWidth="150.0" text="Process Queue">Process Queue</Button>
+      </HBox>
+      <TableView fx:id="taskTable" minHeight="100.0" prefHeight="300.0" VBox.vgrow="ALWAYS">
+        <columns>
+      		<TableColumn fx:id="fileNameCol" prefWidth="465.0" text="File" />
+      		<TableColumn fx:id="profileNameCol" prefWidth="200.0" text="Profile" />
+      		<TableColumn fx:id="progressCol" prefWidth="100.0" text="Progress" />
+        </columns>
+      </TableView>
+      <HBox spacing="5.0">
+        	<Button fx:id="startSelectedTask" prefWidth="150.0" text="Start selected task">Start task</Button>
+        	<Button fx:id="removeSelectedTask" prefWidth="150.0" text="Remove selected task">Remove task</Button>
+        	<Button fx:id="removeFinishedTasks" prefWidth="150.0">Remove all finished tasks</Button>
+        </HBox>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
