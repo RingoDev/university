@@ -1,0 +1,98 @@
+COMPILER ScrumTaskboard
+
+/*----------------------------------------------------------
+  --- GLOBAL FIELDS AND METHODS
+  ----------------------------------------------------------*/
+
+    void println(String string) { 
+		System.out.println(string);
+	}
+	
+/*----------------------------------------------------------
+  --- SCANNER
+  ----------------------------------------------------------*/
+
+CHARACTERS
+    digit =  "0123456789".
+    hour1st	= "012".
+    min1st = "012345".
+    letter =  'a'..'z'. 
+    anyButQuote = ANY - '"'.
+
+TOKENS
+    initials = letter { letter }.
+    string = '"' { anyButQuote } '"'.
+    date = digit digit digit digit '-' digit digit '-' digit digit.
+    time = hour1st digit ':' min1st digit.
+    id = digit {digit} letter.
+    duration = digit {digit} ["." digit].
+    open = "open".
+    active = "active".
+    done = "done".
+   
+COMMENTS FROM "/*" TO "*/" NESTED
+
+IGNORE '\r' + '\n' + '\t'
+
+/*----------------------------------------------------------
+  --- PARSER
+  ----------------------------------------------------------*/
+
+PRODUCTIONS
+
+ScrumTaskboard =
+	
+    "Export" "of" "Taskboard" Date time
+    "Developers"
+	{ Developer }
+
+	"Tasks"
+	{ Task }
+
+	"Bookings"
+	{ Booking }
+	.
+
+Date =
+    date
+    .
+
+Developer = 
+    Initials
+    Name
+	.
+
+Initials =
+    initials
+    .
+
+Task =
+    Id [Status] Restduration Name
+    .
+Id =
+    id
+    .
+
+Status =
+    open | active | done
+    .
+
+Restduration =
+    duration
+    .
+
+Name =
+    string
+    .
+
+Booking =
+    Id Date Restduration Initials Worktime {Initials Worktime}
+    {Date Restduration Initials Worktime {Initials Worktime}}
+    .
+
+Worktime =
+    duration
+    .
+
+
+END ScrumTaskboard.

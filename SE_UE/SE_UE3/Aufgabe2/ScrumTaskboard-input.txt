@@ -1,0 +1,152 @@
+Export of Taskboard 2021-01-07 12:00
+
+Developers
+    msc "Millicent Schmitt"
+    dre "Danica Cresswell"
+    mlo "Megan Lord"
+    rda "Rudi Dalton"
+    orah "Oskar Rahman"
+    haha "Harvey Haines"
+    shdo "Shyla Dominguez"
+    ira "Iain Randolph"
+    sh "Shanon Short"
+    roc "Rocco Daniels"
+    haha "Haley Haines"
+    lbo "Laiba Boone"
+    msa "Mathilde Salgado"
+    cba "Cerys Bate"
+
+Tasks
+    12a open 3.4 "Startschuss des Projektes"
+    12b done 5 "Analyse der Sicherheitslücken"
+    32c active 1.2 "Aufbereitung von Lösungsmöglichkeiten"
+    54a done 2.3 "Evaluierung der zu implementierenden Lösungen"
+    43c open 5 "Systemarchitektur überarbeiten"
+    43b active 2.2 "Annahme des Entwurfs"
+    54a open 1.1 "Software Entwicklungsmethode festlegen"
+    43d 2.1 "Testumgebung aufsetzen"
+    21a done 1.8 "Testbedingungen festlegen"
+    12a 6.1 "Externe Tester beauftragen"
+    43a open 1.3 "2-Faktor-Authentifizierung implementieren"
+    78a open 2.1 "Rollenverteilung neu umsetzen"
+    98a done 4.9 "Sicherheitskritische Funktionen einschränken"
+    98b open 2.2 "Implementation des Intrusion Prevention Systems"
+    98c active 1.2 "Implementation eines Fühwarnsystems"
+    54c 1.1 "Test des Intrusion Prevention Systems"
+    34b 4.4 "Update auf neues Betriebssystem"
+    34a done 1.2 "Installation der Antivirensoftware"
+    4d done 2.3 "Festplattenverschlüsselung durchführen"
+    23c open 5.1 "Berechtigungen strikter umsetzen"
+    4b active 2.2 "Aufbereitung von Awareness Unterlagen"
+    53a 1 "Interne Fortbildung zum Thema Digital Awareness abhalten"
+    5c open 0.5 "Digital Security Richtlinien ausarbeiten"
+    5b 2.3 "Workshop zur Digitalen Fortbildung anbieten"
+    5a 1.9 "Filialarbeiter mit neuem Betriebssystem vertraut machen"
+    64b 2 "Abschluss-Besprechungsphase"
+    67a done 1.1 "Aggregierung der Teildokumentationen"
+    7a open 1 "Projekterfahrungen dokumentieren"
+    7c open 2 "Projekt-Abschlussbericht verfassen"
+    7b active 1.7 "Auflösen der Projektstrukturen"
+    8a active 2.6 "Freigeben von Projektressourcen"
+
+Bookings
+	53a	2020-08-04 1.3 ira 2
+		2020-08-05 0.5 msc 8 dre 1.5
+		2020-08-06 0 ira 4 dre 0.5 sh 0.5
+		2020-08-07 1 msc 5.5 roc 1.5
+		2020-08-08 0.5 ira 7
+		2020-08-11 0 dre 6 roc 1.5
+
+	64b	2020-08-04 0.5 shdo 1.5
+		2020-08-15 2.1 sh 8.5
+
+	98b	2020-08-09 0.5 dre 2.5
+
+	90b	2020-08-09 0.5 dre 2.5
+		2020-08-09 0.5 ira 0.5
+		2020-08-10 0.5 sh 1.5
+		2020-08-11 1.5 shdo 8
+
+	64b	2020-08-18 0 ira 1.5
+
+	64b	2020-13-18 0 orah 0.5
+
+	8a	2020-08-14 0 roc 0.5
+		2020-08-15 0.5 shdo 0.5
+
+    21a 2020-08-04 1.3 ira 2
+        2020-08-05 0.5 msc 8 dre 1.5
+        2020-08-06 0 sh 4 dre 0.5 haha 0.5
+        2020-08-11 0 dre 6 orah 1.5
+
+    12a 2020-08-05 0.5 msc 8 dre 1.5
+        2020-08-06 0 msc 4 dre 0.5 haha 0.5
+        2020-08-07 1 sh 5.5 orah 1.5
+        2020-08-08 0.5 msc 7
+        2020-08-11 0 dre 6 rda 1.5
+
+    43a 2020-08-06 0 ira 4 rda 0.5 haha 0.5
+        2020-08-07 1 sh 5.5 rda 1.5
+        2020-08-08 0.5 sh 7
+        2020-08-11 0 dre 6 orah 1.5
+
+    78a 2020-08-05 0.5 msc 8 ira 1.5
+        2020-08-06 0 msc 4 rda 0.5 haha 0.5
+        2020-08-07 1 msc 5.5 bla 1.5
+        2020-08-08 0.5 msc 7
+        2020-08-11 0 dre 6 ira 1.5
+
+    98a 2020-08-05 0.5 msc 8 dre 1.5
+        2020-08-06 0 msc 4 dre 0.5 sh 0.5
+        2020-08-07 1 sh 5.5 roc 1.5
+        2020-08-08 0.5 msc 7
+        2020-08-11 0 dre 6 roc 1.5
+
+    98b 2020-08-06 0 msc 4 dre 0.5 haha 0.5
+        2020-08-07 1 sh 5.5 roc 1.5
+        2020-08-08 0.5 mlo 7
+        2020-08-11 0 dre 6 roc 1.5
+
+    98c 2020-08-04 1.3 msc 2
+        2020-08-05 0.5 mlo 8 dre 1.5
+        2020-08-06 0 sh 4 dre 0.5 haha 0.5
+        2020-08-11 0 mlo 6 rda 1.5
+
+    54c 2020-08-04 1.3 msc 2
+        2020-08-05 0.5 ira 8 dre 1.5
+
+    34b 2020-08-05 0.5 msc 8 mlo 1.5
+        2020-08-06 0 msc 4 dre 0.5 haha 0.5
+
+    34a 2020-08-04 1.3 msc 2
+        2020-08-05 0.5 msc 8 dre 1.5
+        2020-08-06 1.5 msc 4 dre 0.5 orah 0.5
+
+    4d 2020-08-07 1 msc 5.5 roc 1.5
+        2020-08-08 0.5 mlo 7
+        2020-08-11 0 orah 6 roc 1.5
+
+    23c 2020-08-11 0 dre 6 roc 1.5
+
+    4b 2020-08-04 1.3 msc 2
+
+    53a 2020-08-04 1.3 ira 2
+        2020-08-05 0.5 msc 8 dre 1.5
+        2020-08-07 1 orah 5.5 mlo 1.5
+        2020-08-08 0.5 msc 7
+        2020-08-11 0 dre 6 roc 1.5
+
+    7c 2020-08-04 1.3 mlo 2
+        2020-08-05 0.5 msc 8 dre 1.5
+        2020-08-06 0 orah 4 ira 0.5 haha 0.5
+        2020-08-08 0.5 msc 7
+        2020-08-11 0 dre 6 rda 1.5
+
+    9b 2020-08-04 1.3 msc 2
+        2020-08-05 0.5 msc 8 dre 1.5
+        2020-08-06 0 mlo 4 rda 0.5 ira 0.5
+        2020-08-07 1 msc 5.5 roc 1.5
+        2020-08-08 0.5 mlo 7
+        2020-08-11 0 dre 6 roc 1.5
+
+

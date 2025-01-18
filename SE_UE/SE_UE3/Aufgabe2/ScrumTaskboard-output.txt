@@ -1,0 +1,63 @@
+-- line 14 col 10: Entwickler/in haha mehrfach gelistet. Der letzte Eintrag zÃÂÃÂ¤hlt.
+-- line 26 col 18: Aufgabe 54a mehrfach gelistet. Der letzte Eintrag zÃ¤hlt.
+-- line 29 col 13: Aufgabe 12a mehrfach gelistet. Der letzte Eintrag zÃ¤hlt.
+-- line 65 col 2: Aufgabe 90b nicht gelistet. Die Buchungen fÃÂ¼r diese Aufgabe werden der Sammelaufgabe
+999a zugeordnet.
+-- line 95 col 30: Entwickler/in mit den Initialen bla wird in einer Buchung angefÃ¼hrt aber nicht in der Entwicklerliste. Die Buchung wird dem Sammelentwickler mit den Initialen XXXX zugeordnet
+-- line 145 col 5: Aufgabe 9b nicht gelistet. Die Buchungen fÃÂ¼r diese Aufgabe werden der Sammelaufgabe
+999a zugeordnet.
+
+
+Diese 10 Entwickler/innen waren beim Sprint dabei: [dre, haha, ira, mlo, msc, orah, rda, roc, sh, shdo]
+Diese 3 Entwickler/innen fehlten beim Sprint: [lbo, cba, msa]
+
+
+Die einzelnen Entwickler/innen leisteten folgende Stunden:
+    - Millicent Schmitt [msc] 171.0 Stunden
+    - Danica Cresswell [dre] 90.0 Stunden
+    - Shanon Short [sh] 48.0 Stunden
+    - Megan Lord [mlo] 44.0 Stunden
+    - Iain Randolph [ira] 35.0 Stunden
+    - Oskar Rahman [orah] 21.0 Stunden
+    - Rocco Daniels [roc] 18.5 Stunden
+    - Shyla Dominguez [shdo] 10.0 Stunden
+    - Rudi Dalton [rda] 7.5 Stunden
+    - Haley Haines [haha] 4.0 Stunden
+
+Diese 14 Aufgaben haben eine ErstschÃÂ¤tzung > 2 Personentage: [4b, 4d, 5b, 8a, 12a, 12b, 23c, 34b, 43b, 43c, 43d, 78a, 98a, 98b]
+Diese 3 Aufgaben haben den Status 'erledigt' mit Restaufwand > 0 Stunden: [12b, 34a, 67a]
+
+FÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¼r diese 6 aktiven Aufgaben wurden insgesamt 27.0 Stunden gebucht:[4b, 7b, 8a, 32c, 43b, 98c]
+FÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¼r diese 6 erledigten Aufgaben wurden insgesamt 98.0 Stunden gebucht:[4d, 12b, 21a, 34a, 67a, 98a]
+
+FÃ¼r die einzelnen aktiven Aufgaben wurde folgender Arbeitsaufwand gebucht:
+  - Aufbereitung von Awareness Unterlagen [4b] 2.0 Stunden
+  - AuflÃ¶sen der Projektstrukturen [7b] 0.0 Stunden
+  - Freigeben von Projektressourcen [8a] 1.0 Stunden
+  - Aufbereitung von LÃ¶sungsmÃ¶glichkeiten [32c] 0.0 Stunden
+  - Annahme des Entwurfs [43b] 0.0 Stunden
+  - Implementation eines FÃ¼hwarnsystems [98c] 24.0 Stunden
+
+FÃ¼r die einzelnen erledigten Aufgaben wurde folgender Arbeitsaufwand gebucht:
+  - FestplattenverschlÃ¼sselung durchfÃ¼hren [4d] 21.5 Stunden
+  - Analyse der SicherheitslÃ¼cken [12b] 0.0 Stunden
+  - Testbedingungen festlegen [21a] 24.0 Stunden
+  - Installation der Antivirensoftware [34a] 16.5 Stunden
+  - Aggregierung der Teildokumentationen [67a] 0.0 Stunden
+  - Sicherheitskritische Funktionen einschrÃ¤nken [98a] 36.0 Stunden
+
+An den folgenden 12 Tagen buchten die gelisteten Entwickler/innen den angefÃ¼hrten Arbeitsaufwand:
+      2020-08-04 insgesamt 19.5 Stunden: [mlo, shdo, ira, msc]
+      2020-08-05 insgesamt 114.0 Stunden: [mlo, dre, ira, msc]
+      2020-08-06 insgesamt 60.0 Stunden: [mlo, haha, sh, dre, ira, msc, rda, orah]
+      2020-08-07 insgesamt 63.0 Stunden: [mlo, sh, roc, XXXX, msc, orah, rda]
+      2020-08-08 insgesamt 70.0 Stunden: [mlo, sh, ira, msc]
+      2020-08-09 insgesamt 5.5 Stunden: [dre, ira]
+      2020-08-10 insgesamt 1.5 Stunden: [sh]
+      2020-08-11 insgesamt 105.5 Stunden: [mlo, shdo, dre, roc, ira, orah, rda]
+      2020-08-14 insgesamt 0.5 Stunden: [roc]
+      2020-08-15 insgesamt 9.0 Stunden: [sh, shdo]
+      2020-08-18 insgesamt 1.5 Stunden: [ira]
+      2020-13-18 insgesamt 0.5 Stunden: [orah]
+
+6 errors detected
