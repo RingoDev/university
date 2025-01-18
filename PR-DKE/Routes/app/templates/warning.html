@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div id="body">
+
+    <h1>Warning</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+    <table>
+        <tr><td>{{ form.description.label }}:</td><td>{{ form.description}}</td> </tr>
+        <tr><td>{{ form.section.label }}:</td><td>{{ form.section }}</td> </tr>
+
+
+        <tr><td colspan="2">{{ form.submit() }}</td> </tr>
+
+    </table>
+
+    </form>
+        </div>
+{% endblock %}

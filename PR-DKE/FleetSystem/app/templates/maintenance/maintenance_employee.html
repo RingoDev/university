@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Wartungsübersicht</h3>
+    <form id="maintenance" action="{{url_for('maintenance_employee')}}" method="post">
+        <table>
+            <thead style="border-radius: 0.5rem">
+            <tr class="tableHeader">
+                <th>Id</th>
+                <th>Typ</th>
+                <th>Start</th>
+                <th>Ende</th>
+                <th>Mitarbeiter Id</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for maintenance in data %}
+                    <tr class="tableContent">
+                        <td>{{ maintenance.id }}</td>
+                        <td>{{ maintenance.type }}</td>
+                        <td>{{ maintenance.start_date }}</td>
+                        <td>{{ maintenance.end_date }}</td>
+                        <td>{{ maintenance.user_id }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}

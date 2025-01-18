@@ -1,0 +1,29 @@
+{% extends "base_ma.html" %}
+
+{% block content %}
+    <div id="body">
+    <h1>Warning details:</h1>
+<table id="customers">
+    <tr>
+        <th>ID </th>
+        <th>Section</th>
+        <th>Description</th>
+    </tr>
+
+
+
+        {% for section in route.routeSection.all() %}
+                    {% for w in warning %}
+                        {% if section.name == w.section %}
+                            <tr>
+                            <td> {{ w.id }}</td>
+                            <td>{{ w.section }}</td>
+                            <td>{{ w.description }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+
+    {% endfor %}
+</table>
+    </div>
+{% endblock %}

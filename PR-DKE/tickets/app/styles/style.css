@@ -1,0 +1,273 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+button {
+    border-color: unset;
+    border-width: unset;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: #333333;
+    font-family: "Helvetica Neue";
+    font-size: medium;
+    color: white;
+    height: 100%;
+}
+
+/**************Login Styling**************/
+
+#logoutContainer {
+    text-align: right;
+    padding: 0.5rem
+}
+
+#loginContainer {
+    padding: 1rem;
+    background-color: #505050;
+    height: 60%;
+    width: 50%;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.logoutButton {
+    background-color: #333333;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#username {
+    background-color: #7C7C7C;
+    color: white;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+#email {
+    background-color: #7C7C7C;
+    color: white;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+#password {
+    background-color: #7C7C7C;
+    color: white;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+#password2 {
+    background-color: #7C7C7C;
+    color: white;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+#vl{
+    border-left: 3px solid white;
+    height: 80%;
+    margin: 2rem;
+}
+
+#submit {
+    border-color: unset;
+    border-width: unset;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #4DA8B4;
+    color: white;
+}
+
+#register_link:hover {color: #4DA8B4 }
+#register_link { text-decoration: underline}
+
+.linkContainer {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center
+}
+
+.navLink {
+    background-color: #c4c4c4;
+    border-color: unset;
+    border-width: unset;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+}
+
+.siteLink {
+    background-color: #4DA8B4;
+    border-color: unset;
+    border-width: unset;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.active {
+    background-color: #4DA8B4;
+
+}
+
+#leftMenu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    flex: 0 1 20%;
+    background-color: #7C7C7C;
+    border-radius: 1rem;
+}
+
+#leftMenuContainer {
+    height: 100%;
+    padding: 1rem;
+    flex: 0 1 20%;
+}
+
+#rightOptionsContainer {
+    padding: 0 1rem 1rem 1rem;
+}
+
+#rightOptions {
+    padding: 2rem;
+    background-color: #505050;
+    height: 90%;
+    border-radius: 1rem;
+}
+
+.inputField {
+    background-color: #7C7C7C;
+    color: white;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+
+
+.submitButton {
+    border-color: unset;
+    border-width: unset;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #4DA8B4;
+    color: white;
+}
+
+/**************Table Styling**************/
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.tableHeader {
+    border-bottom: 1px solid white;
+}
+
+.tableContent {
+    overflow-x: auto;
+    margin-top: 0;
+}
+
+th {
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    color: #fff;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+#searchTable tr > *:first-child {
+    width: 15%;
+}
+
+#searchTable tr > *:first-child(2) {
+    width: 10%;
+}
+
+#searchTable tr > *:nth-child(3) {
+    width: 45%;
+}
+
+#searchTable tr > *:nth-child(4) {
+    width: 10%;
+}
+
+#searchTable tr > *:nth-child(5) {
+    width: 10%;
+}
+
+#searchTable tr > *:last-child {
+    width: 10%;
+}
+
+#searchContainer {
+    padding: 1.5rem;
+}
+
+
+.buyButton {
+    border-color: unset;
+    border-width: unset;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: #4DA8B4;
+    color: white;
+    font-size: 1rem;
+}
+
+#warning{
+    background-color: #7C7C7C;
+    font-weight: bold;
+    font-size: small;
+}

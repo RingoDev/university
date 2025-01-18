@@ -1,0 +1,35 @@
+{% extends "base_ma.html" %}
+
+{% block content %}
+    <div>
+    <h1>Stations: </h1>
+    </div>
+
+    <table >
+            <thead style="border-radius: 0.5rem">
+
+    <tr class="tableHeader">
+        <th>ID </th>
+        <th>Name </th>
+        <th>Straße</th>
+        <th>Ort</th>
+        <th>PLZ</th>
+
+    </tr>
+            </thead>
+
+    <tbody>
+    {% for station in stations %}
+    <tr class="tableContent">
+    <td> {{ station.id }} </td>
+    <td> {{ station.name }}</td>
+    <td> {{ station.road }}</td>
+    <td> {{ station.place }}</td>
+    <td> {{ station.postal }}</td>
+
+    </tr>
+                {% endfor %}
+</tbody>
+    </table>
+    </div>
+{% endblock %}

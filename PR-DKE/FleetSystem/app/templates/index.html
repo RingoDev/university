@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Hallo, {{ current_user.username }} ({{ "Admin" if  current_user.is_admin() else "Mitarbeiter" }})!</h3>
+     <p></p>
+{% endblock %}

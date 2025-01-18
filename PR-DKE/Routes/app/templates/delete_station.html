@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Delete Station</h1>
+    <form action="" method="post" novalidate>
+
+        {{ form.hidden_tag() }}
+<p>
+    <label>Select station to delete</label>
+                <br>
+            {{ form.id}}<br><br>
+            <label>Road: </label><br><input type="text" id="road" readonly></input><br><br>
+<label>Place: </label><br><input type="text" id="place" readonly></input><br><br>
+<label>Postal: </label><br><input type="text" id="postal" readonly></input><br>
+            {% for error in form.id.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+
+
+        <p>{{ form.submit() }}</p>
+    </form>
+    <script>
+    let id_select = document.getElementById('id');
+    id_select.onchange = function(){
+        const idd = id_select.value;
+        if (idd == "nothing selected"){
+                    document.getElementById('road').value = "";
+                    document.getElementById('place').value = "";
+                    document.getElementById('postal').value = "";
+        }else{
+            fetch('/station/'+idd).then(function(response){
+            response.json().then(function(data){
+
+                x = JSON.stringify(data.station);
+                y = JSON.parse(x);
+                //alert(data.station.designation);
+                for (let entry of data.station){
+
+                    document.getElementById('road').value = entry.road;
+                    document.getElementById('place').value = entry.place;
+                    document.getElementById('postal').value = entry.postal;
+                    //alert(entry.road);
+                }
+
+            })
+        });
+
+        }
+
+    }
+
+</script>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "application_base.html" %}
+
+{% block content %}
+
+    <a href="{{ url_for("employees_list") }}">Zurück</a>
+
+    <h1>Mitarbeiter</h1>
+
+    <div>Vorname: {{ employee.first_name }}</div>
+    <div>Nachname: {{ employee.last_name }}</div>
+    <div>Benutzername: {{ employee.username }}</div>
+    <div>Eingeteilt in:
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Start – Ende</th>
+                <th>Abfahrt</th>
+                <th>Dauer</th>
+            </tr>
+
+            {% for trip in employee.trips %}
+                <tr>
+                    <td>
+                        {{ trip.id }}
+                    </td>
+                    <td>
+                        {{ trip.get_route().stops[0].station.name }} - {{ trip.get_route().stops[-1].station.name }}
+                    </td>
+                    <td>{{ trip.get_datetime_as_string() }}</td>
+                    <td>{{ trip.get_route().stops[-1].time }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <hr/>
+        <a href="{{ url_for("employee_edit", employee_id=employee.id) }}">
+            Bearbeiten
+        </a>
+    </div>
+
+{% endblock %}

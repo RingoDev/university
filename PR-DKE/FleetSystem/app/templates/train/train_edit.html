@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+    <h3>Zug bearbeiten</h3>
+    </div>
+    <form id="train_wagon" action="{{url_for('train_edit', train_id=train.id)}}" method="post">
+
+         <div>
+         <label id="number">Nummer: </label>
+         <input class="inputField" type="number" name="Zugnummer" value="{{ train.number }}">
+     </div>
+
+         <div>
+      <label for="engine_wagon">Triebkraftwagen: </label>
+        <select class="inputField" name="Triebkraftwagen" id="engine_wagon">
+         <option {{ "selected" }} value="{{ train.engine_wagon_id }}">{{ train.engine_wagon_id }}</option>
+            {% for engine_wagon in engine_wagons %}
+               <option {{ "selected" }} value="{{ engine_wagon.id }}" > {{ engine_wagon.name }} - Spurweite {{ engine_wagon.track_width }}</option>
+            {% endfor %}
+        </select>
+    </div>
+        <div>
+      <label id="passenger_wagon">Personenwaggons: </label>
+        <select name="Personenwaggons" id="passenger_waggons" multiple size="{{ [passenger_wagons|length,4]|min }}">
+            {% for passenger_wagon in passenger_waggons %}
+            <option {{ "selected" }} value="{{ passenger_wagon.id }}">{{ passenger_wagon.name }} - Spurweite {{ passenger_wagon.track_width }}</option>
+            {% endfor %}
+        </select>
+    </div>
+          <button class="submitButton" type="submit">Zug ändern</button>
+    </form>
+        {% if success is not none and success == True %}
+            <h4>Zug {{ train }} geändert!</h4>
+            {% elif success == False %}
+            <h4>Fehler: Waggons müssen die gleiche Spurweite haben</h4>
+        {% endif %}
+{% endblock %}

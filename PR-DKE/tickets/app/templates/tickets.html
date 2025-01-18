@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h1>Ihre aktuell gebuchten Tickets</h1>
+        {#        <div style="display: flex; align-items: center">#}
+        {#            <a class="siteLink" href="{{ url_for('promotion_create') }}">Aktion erstellen</a>#}
+        {#        </div>#}
+    </div>
+    <table cellpadding="0" cellspacing="0" border="0">
+        <thead style="border-radius: 0.5rem">
+        <tr class="tableHeader">
+            <th>Status</th>
+            <th>Strecke</th>
+            <th>Sitzplatz reservieren</th>
+            <th>Stornieren</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ticket in result %}
+            <tr class="tableContent">
+                {% if ticket.state|string == 'TicketStatus.active' %}
+                    <td>Aktiv</td>
+                {% elif ticket.state|string == 'TicketStatus.cancelled' %}
+                    <td>Storniert</td>
+                {% elif ticket.state|string == 'TicketStatus.used' %}
+                    <td>Verbraucht</td>
+                {% endif %}
+                <td>{{ ticket.get_trip().stops[0].station.name }} --- {{ ticket.get_trip().stops[-1].station.name }}
+                    | {{ ticket.get_trip().stops[0].departure }}</td>
+                <td>
+                    {% if reserved[ticket.id] == True %}
+                        <div style="display: flex; flex-direction: row; align-items: center">
+                            <label style="padding-right: 1rem">reserviert</label>
+                            <a style="background-color: brown; padding: 0.3rem 0.6rem" class="siteLink" href="{{ url_for('ticket_delete_reservation', ticket_id=ticket.id) }}">x</a>
+                        </div>
+                    {% else %}
+                        {% if ticket.state|string == 'TicketStatus.active' %}
+                            <a class="siteLink" href="{{ url_for('tickets_reservate', ticket_id=ticket.id) }}">Reservieren</a>
+                        {% endif %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if ticket.state|string == 'TicketStatus.active' %}
+                        <a class="siteLink" style="background-color: brown"
+                           href="{{ url_for('ticket_delete', ticket_id=ticket.id) }}">Löschen</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if success is not none and success == True %}
+        <h3>Ihr Ticket wurde erfolgreich storniert!</h3>
+    {% endif %}
+{% endblock %}

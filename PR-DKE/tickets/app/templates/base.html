@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" href="/styles/style.css">
+<head>
+    {% if title %}
+        <title>{{ title }} - Ticketsystem</title>
+    {% else %}
+        <title>Willkommen im Ticketsystem</title>
+    {% endif %}
+</head>
+<body>
+<div style="display: flex;flex-direction: row; height:100%">
+    <div id="leftMenuContainer">
+        <div id="leftMenu">
+                <div class="linkContainer">
+                    <a class="navLink {% if request.endpoint=='index' %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
+                </div>
+                <div class="linkContainer">
+                    <a class="navLink {% if request.endpoint=='tickets' %}active{% endif %}" href="{{ url_for('tickets') }}">Ticketübersicht</a>
+                </div>
+                {% if current_user.is_admin() %}
+                    <div class="linkContainer">
+                        <a class="navLink  {% if request.endpoint=='promotion_overview' %}active{% endif %}" href="{{ url_for('promotion_overview') }}">Admin Seite</a>
+                    </div>
+                {% endif %}
+        </div>
+    </div>
+    <div style="flex: 1 1 80%; height:100%">
+        <div id="logoutContainer">
+            {% if current_user.is_anonymous %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% else %}
+                <a class="logoutButton" href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+        </div>
+        <div id="rightOptionsContainer">
+            <div id="rightOptions">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

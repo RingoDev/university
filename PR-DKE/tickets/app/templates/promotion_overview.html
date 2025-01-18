@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h1>Aktionen Übersicht</h1>
+        <div style="display: flex; align-items: center">
+            <a class="siteLink" href="{{ url_for('promotion_create') }}">Aktion erstellen</a>
+        </div>
+    </div>
+    <table cellpadding="0" cellspacing="0" border="0">
+        <thead style="border-radius: 0.5rem">
+        <tr class="tableHeader">
+            <th>Id</th>
+            <th>Strecke</th>
+            <th>Startdatum</th>
+            <th>Enddatum</th>
+            <th>Prozent</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for promotion in data %}
+                <tr class="tableContent">
+                    <td>{{ promotion.id }}</td>
+                    <td>{{ promotion.route_id }}</td>
+                    <td>{{ promotion.start_date }}</td>
+                    <td>{{ promotion.end_date }}</td>
+                    <td>{{ promotion.percent }}</td>
+                    <td><a class="siteLink" href="{{ url_for('promotion_edit', promotion_id=promotion.id) }}">Bearbeiten</a></td>
+                    <td><a class="siteLink" style="background-color: brown" href="{{ url_for('promotion_delete', promotion_id=promotion.id) }}">Löschen</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if success is not none and success == True %}
+        <h3>Ihre Aktion wurde erfolgreich gelöscht!</h3>
+    {% endif %}
+
+
+{% endblock %}

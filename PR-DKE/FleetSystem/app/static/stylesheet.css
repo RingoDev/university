@@ -1,0 +1,137 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: #1029d9;
+    text-align: center;
+    text-weight: bold;
+    text-decoration: none;
+}
+
+body {
+    background-color: #333333;
+}
+
+button {
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.submitButton {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #1029d9;
+    color: #ffff;
+    margin: 5px;
+}
+
+.logoutButton {
+    background-color: #333333;
+    color: #ffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#logoutContainer {
+    text-align: right;
+    padding: 0.5rem
+}
+
+.linkContainer {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.navLink {
+    background-color: #c4c4c4;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.siteLink {
+    background-color: #c4c4c4;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #1029d9;
+}
+
+#leftMenu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    flex: 0 1 20%;
+    background-color: #7C7C7C;
+    border-radius: 1rem;
+}
+
+#leftMenuContainer {
+    height: 100%;
+    padding: 1rem;
+    flex: 0 1 20%;
+}
+
+#rightOptionsContainer {
+    padding: 0 1rem 1rem 1rem;
+}
+
+#rightOptions {
+    padding: 2rem;
+    background-color: #7C7C7C;
+    height: 90%;
+    border-radius: 1rem;
+}
+
+.inputField {
+    background-color: #615959;
+    color: #ffff;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border:none;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.tableHeader {
+    border-bottom: 1px solid #ffff;
+}
+
+.tableContent {
+    overflow-x: auto;
+    margin-top: 0;
+}
+
+th {
+    padding: 1rem;
+    text-align: left;
+    color: #ffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    color: #ffff;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}

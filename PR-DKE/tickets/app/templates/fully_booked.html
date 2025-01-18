@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h1>Ticket reservieren</h1>
+        <div style="display: flex; align-items: center">
+            <a class="siteLink" href="{{ url_for('tickets') }}">zurück zur Ticketübersicht</a>
+        </div>
+    </div>
+    <div id="searchContainer">
+        <p>Leider sind alle Sitzreservierungen für die Fahrt von > <label style="font-weight: bold">{{ trip.stops[0].station.name }} - {{ trip.stops[-1].station.name }}</label> <  ausgebucht!!</p>
+        <p>Das heißt, Sie können für diese Fahrt keinen Sitzplatz mehr reservieren.</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+     <div style="display: flex; justify-content: flex-end; flex-direction: row">
+     {% if current_user.is_admin() %}
+          <a href="{{ url_for('passenger_wagon_create') }}">Personenwagen anlegen</a>
+        {% endif %}
+    </div>
+    <h3>Personenwagenübersicht</h3>
+    <form id="railway_wagon" action="{{url_for('passenger_wagon_overview')}}" method="post">
+        <table>
+            <thead style="border-radius: 0.5rem">
+            <tr class="tableHeader">
+                <th>Id</th>
+                <th>Bezeichnung</th>
+                <th>Spurweite</th>
+                <th>Sitzanzahl</th>
+                <th>Max. Gewicht</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for passenger_wagon in data %}
+                    <tr class="tableContent">
+                        <td>{{ passenger_wagon.id }}</td>
+                        <td>{{ passenger_wagon.name }}</td>
+                        <td>{{ passenger_wagon.track_width }}</td>
+                        <td>{{ passenger_wagon.seats }}</td>
+                        <td>{{ passenger_wagon.max_capacity }}</td>
+                         {% if current_user.is_admin() %}
+                        <td><a class="siteLink" href="{{ url_for('passenger_wagon_edit', passenger_wagon_id=passenger_wagon.id) }}">Bearbeiten</a></td>
+                        <td><a class="siteLink" href="{{ url_for('passenger_wagon_delete', passenger_wagon_id=passenger_wagon.id) }}">Löschen</a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </form>
+        {% if success == False %}
+            <h4>Fehler: Personenwagen einem Zug zugeordnet!</h4>
+            {% elif success is not none and success == True %}
+            <h4>Personenwagon gelöscht!</h4>
+        {% endif %}
+{% endblock %}

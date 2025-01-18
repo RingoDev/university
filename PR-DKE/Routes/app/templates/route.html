@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div id="body">
+
+    <h1>Route</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+    <table>
+        <tr><td>{{ form.startStation.label }}:</td><td>{{ form.startStation}}</td> </tr>
+        <tr><td>{{ form.endStation.label }}:</td><td>{{ form.endStation }}</td> </tr>
+        <tr><td>{{ form.sections.label }}:</td><td>{{ form.sections }}</td> </tr>
+
+
+        <tr><td colspan="2">{{ form.submit() }}</td> </tr>
+
+    </table>
+
+    </form>
+        </div>
+{% endblock %}

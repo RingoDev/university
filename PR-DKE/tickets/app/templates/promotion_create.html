@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h1>Aktionen festlegen</h1>
+        <div style="display: flex; align-items: center">
+            <a class="siteLink" href="{{ url_for('promotion_overview') }}">zurück zur Aktionsübersicht</a>
+        </div>
+    </div>
+    <form id="promotion" action="{{url_for('promotion_create')}}" method="post">
+    <div>
+      <label for="route">Strecke</label>
+        <select class="inputField" name="Route" id="route">
+            {% for route in routes %}
+            <option value="{{ route.id }}">{{ route.stops[0].station.name }} - {{ route.stops[-1].station.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+      <label for="amount">Preisnachlass in %</label>
+      <input class="inputField" id="amount" type="number" name="Prozent"/>
+    </div>
+    <div>
+      <label for="begin">Beginn der Aktion</label>
+      <input class="inputField" id="begin" type="date" name="Beginn"/>
+        <label for="end">Ende der Aktion</label>
+      <input class="inputField" id="end" type="date" name="Ende"/>
+    </div>
+      <button class="submitButton" type="submit">Erstellen</button>
+    </form>
+    {% if success is not none and success == True %}
+        <h3>Ihre Aktion wurde erfolgreich angelegt!</h3>
+    {% endif %}
+{% endblock %}

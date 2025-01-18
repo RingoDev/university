@@ -1,0 +1,26 @@
+{% extends "application_base.html" %}
+
+{% block content %}
+    <h1>Routenübersicht</h1>
+
+    {% for route in routes %}
+        <div style="display:flex; justify-content: space-between">
+            <a href="{{ url_for("route_show",route_id=route.id) }}">
+                <div>
+                <span>
+                    {{ route["stops"][0]["station"]["name"] }}
+                </span>
+                    -
+                    <span>
+                    {{ route["stops"][-1]["station"]["name"] }}
+                </span>
+                </div>
+            </a>
+            <a href="{{ url_for('trip_create', route_id=route["id"]) }}">
+                Fahrt erstellen
+            </a>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

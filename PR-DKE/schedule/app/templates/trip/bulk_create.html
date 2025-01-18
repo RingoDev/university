@@ -1,0 +1,62 @@
+{% extends "application_base.html" %}
+
+
+
+{% block content %}
+    <div style="display: flex; justify-content: space-between; flex-direction: row">
+        <a href="{{ url_for("routes_list") }}">Zurück</a>
+        <a href="{{ url_for("trip_create", route_id=route.id) }}">Einzelne Fahrt anlegen</a>
+    </div>
+    <h1>Fahrten erstellen</h1>
+    <h3>Route: {{ route.stops[0].station.name }} - {{ route.stops[-1].station.name }}</h3>
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div style="display: flex; align-items: center;justify-content: space-between;padding:0.5rem">
+            {{ form.start_date.label }}
+            <div style="display: flex;flex-direction: column">
+                {{ form.start_date() }}
+                {% for error in form.start_date.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="display: flex; align-items: center;justify-content: space-between;padding:0.5rem">
+            {{ form.end_date.label }}
+            <div style="display: flex;flex-direction: column">
+                {{ form.end_date() }}
+                {% for error in form.end_date.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="display: flex; align-items: center;justify-content: space-between;padding:0.5rem">
+            {{ form.departure.label }}
+            <div style="display: flex;flex-direction: column">
+                {{ form.departure() }}
+                {% for error in form.departure.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="display: flex; align-items: center;justify-content: space-between;padding:0.5rem">
+            {{ form.price.label }}
+            <div style="display: flex;flex-direction: column">
+                {{ form.price() }}
+                {% for error in form.price.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="display: flex; align-items: center;justify-content: space-between;padding:0.5rem">
+            {{ form.weekdays.label }}
+            <div style="display: flex;flex-direction: column">
+                {{ form.weekdays(size=7) }}
+                {% for error in form.price.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+        </div>
+        {{ form.submit() }}
+    </form>
+{% endblock %}

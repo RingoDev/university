@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+    <h3>Wartung erstellen</h3>
+    </div>
+    <form id="maintenance" action="{{url_for('maintenance_create')}}" method="post">
+     <div>
+         <label id="type">Wartungsart: </label>
+         <input class="inputField" type="text" name="Wartungsart">
+     </div>
+     <div>
+    <label for="train">Zug: </label>
+        <select class="inputField" name="Zug" id="train">
+            {% for train in trains %}
+                <option {{ "selected" }} value="{{ train.id }}">{{ train.number }}</option>
+            {% endfor %}
+        </select>
+     </div>
+     <div>
+      <label for="begin">Beginn der Wartung: </label>
+      <input class="inputField" id="begin" type="date" name="Beginn"/>
+      <input class="inputField" type="time" name="Beginnzeit">
+     </div>
+     <div>
+      <label for="end">Ende der Wartung: </label>
+      <input class="inputField" id="end" type="date" name="Ende"/>
+      <input class="inputField" type="time" name="Endzeit">
+    </div>
+    <label for="user">Mitarbeiter: </label>
+        <select class="inputField" name="Mitarbeiter" id="user">
+            {% for user in users %}
+                <option {{ "selected" }} value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+        </select>
+     </div>
+          <button class="submitButton" type="submit">Wartung erstellen</button>
+                {% if start_is_later %}
+                Startzeit muss vor der Endzeit liegen
+                {% endif %}
+        </form>
+        {% if success is not none and success == True %}
+            <h4>Wartung {{ maintenance }} angelegt!</h4>
+            {% elif success == False %}
+            <h4>Fehler: Endzeit muss vor Starzeit liegen!</h4>
+        {% endif %}
+{% endblock %}

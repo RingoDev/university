@@ -1,0 +1,27 @@
+{% extends "application_base.html" %}
+
+{% block content %}
+    <h1>Arbeitsplan</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Start – Ende</th>
+            <th>Abfahrt</th>
+            <th>Dauer</th>
+        </tr>
+
+        {% for trip in trips %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('trip_show', trip_id=trip.id) }}">{{ trip.id }}</a>
+                </td>
+                <td>
+                    {{ trip.get_route().stops[0].station.name }} - {{ trip.get_route().stops[-1].station.name }}
+                </td>
+                <td>{{ trip.get_datetime_as_string() }}</td>
+                <td>{{ trip.get_route().stops[-1].time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

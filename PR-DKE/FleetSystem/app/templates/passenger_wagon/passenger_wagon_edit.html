@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+    <h3>Personenwagen bearbeiten</h3>
+    </div>
+    <form id="passenger_wagon" action="{{url_for('passenger_wagon_edit', passenger_wagon_id=passenger_wagon.id)}}" method="post">
+         <div>
+             <label id="name">Bezeichnung: </label>
+             <input class="inputField" type="text" name="Bezeichnung" value="{{ passenger_wagon.name }}">
+         </div>
+         <div>
+              <label for="track_width">Spurweite: </label>
+                <select class="inputField" name="Spurweite" id="track_width">
+                    <option {{ "selected" if passenger_wagon.has_track_width_meterspur }} value='M'>Meterspur</option>
+                    <option {{ "selected" if not passenger_wagon.has_track_width_meterspur() }} value='S'>Schmalspur</option>
+                </select>
+         </div>
+         <div>
+            <label id="seats">Sitzanzahl: </label>
+             <input class="inputField" type="number" name="Sitzanzahl" value="{{ passenger_wagon.seats }}">
+         </div>
+         <div>
+             <label id="max_capacity">Max. Gewicht: </label>
+             <input class="inputField" type="number" name="Max. Gewicht" value="{{ passenger_wagon.max_capacity }}">
+         </div>
+        <button class="submitButton" type="submit">Personenwagen ändern</button>
+    </form>
+        {% if success is not none and success == True %}
+            <h4>Personenwagen {{ passenger_wagon }} geändert!</h4>
+        {% endif %}
+{% endblock %}

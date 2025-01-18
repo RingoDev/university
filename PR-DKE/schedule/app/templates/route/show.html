@@ -1,0 +1,62 @@
+{% extends "application_base.html" %}
+
+{% block content %}
+    <div style="display: flex; justify-content: space-between; flex-direction: row">
+        {% if current_user.is_admin() %}
+            <a href="{{ url_for("routes_list") }}">Zurück</a>
+
+            <div>
+                <div><a href="{{ url_for('trip_create', route_id=route.id) }}">Fahrt erstellen</a></div>
+                {#                <div><a href="{{ url_for('route_prices', route_id=route.id) }}">Preise festlegen</a></div>#}
+            </div>
+
+        {% else %}
+            <a href="{{ url_for('trips_list') }}">
+                Übersicht
+            </a>
+        {% endif %}
+    </div>
+    <h1>Routendetails</h1>
+    <div style="margin-bottom: 1rem"><b>Spurweite: </b>{{ route.track_width }}</div>
+    <table>
+        <tr>
+            <th>Bahnhof</th>
+            <th>Ankunft</th>
+        </tr>
+
+        {% for stop in route.stops %}
+            <tr>
+                <td>{{ stop.station.name }}</td>
+                <td>{{ stop.time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Geplante Fahrten</h2>
+
+    <table>
+        <thead style="text-align: left">
+        <tr>
+            <th>Start – Ende</th>
+            <th>Datum</th>
+            <th>Abfahrt</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for trip in trips %}
+            <tr>
+                <td>
+                    {{ trip.get_route().stops[0].station.name }} - {{ trip.get_route().stops[-1].station.name }}
+                </td>
+                <td>{{ trip.get_date_as_string() }}</td>
+                <td>{{ trip.get_time_as_string() }}</td>
+                {% if current_user.is_admin() %}
+                    <td>
+                        <div><a href="{{ url_for('trip_show', trip_id=trip.id) }}">Details</a></div>
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

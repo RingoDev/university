@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h1>Ticket kaufen</h1>
+        <div style="display: flex; align-items: center">
+            <a class="siteLink" href="{{ url_for('index') }}">zurück zur Fahrtensuche</a>
+        </div>
+    </div>
+    <div id="searchContainer">
+        <p>Wollen Sie ein Ticket für die Route  > <label style="font-weight: bold">{{ trip.stops[0].station.name }} - {{ trip.stops[-1].station.name }}</label> <  kaufen?</p>
+        <a href="{{ url_for('index') }}"><button class="submitButton">Abbrechen</button></a>
+        <a href="{{ url_for('index_buy', trip_id=trip.id) + "?success=1" }}"><button class="submitButton" >Bezahlen</button></a>
+    {% if success is not none and success == True %}
+        <h3>Sie haben erfolgreich ein Ticket erworben!</h3>
+    {% endif %}
+    </div>
+
+{% endblock %}

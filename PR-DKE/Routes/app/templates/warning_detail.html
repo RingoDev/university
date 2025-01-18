@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+    <h1>Warning details:</h1>
+    </div>
+<table>
+
+<thead style="border-radius: 0.5rem">
+            <tr class="tableHeader">
+        <th>ID </th>
+        <th>Section</th>
+        <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+
+
+
+        {% for section in route.routeSection.all() %}
+                    {% for w in warning %}
+                        {% if section.name == w.section %}
+    <tr class="tableContent">
+                            <td> {{ w.id }}</td>
+                            <td>{{ w.section }}</td>
+                            <td>{{ w.description }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+
+    {% endfor %}
+</tbody>
+</table>
+    </div>
+{% endblock %}

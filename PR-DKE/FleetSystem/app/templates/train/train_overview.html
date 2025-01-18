@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; justify-content: flex-end; flex-direction: row">
+     {% if current_user.is_admin() %}
+         <a href="{{ url_for('train_create') }}">Zug anlegen</a>
+     {% endif %}
+    </div>
+    <h3>Flottenübersicht</h3>
+    <form id="train" action="{{url_for('train_overview')}}" method="post">
+        <table>
+            <thead style="border-radius: 0.5rem">
+            <tr class="tableHeader">
+                <th>Id</th>
+                <th>Nummer</th>
+                <th>Triebkraftwagen Id</th>
+                <th>Personenwaggons</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for train in trains %}
+                    <tr class="tableContent">
+                        <td>{{ train.id }}</td>
+                        <td>{{ train.number }}</td>
+                        <td>{{ train.engine_wagon_id }}</td>
+                        <td>{{ train.passenger_waggons }}</td>
+                        {% if current_user.is_admin() %}
+                        <td><a class="siteLink" href="{{ url_for('train_edit', train_id=train.id) }}">Bearbeiten</a></td>
+                        <td><a class="siteLink" href="{{ url_for('train_delete', train_id=train.id) }}">Löschen</a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </form>
+        {% if success is not none and success == True %}
+            <h4>Zug {{ train }}gelöscht!</h4>
+        {% endif %}
+    </form>
+{% endblock %}

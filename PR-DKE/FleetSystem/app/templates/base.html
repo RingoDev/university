@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" href="/static/stylesheet.css">
+    <head>
+      {% if title %}
+      <title>{{ title }} - Flotten-Informationssystem</title>
+      {% else %}
+      <title>Willkommen im Flotten-Informationssystem</title>
+      {% endif %}
+    </head>
+    <body>
+       <div style="display: flex;flex-direction: row; height:100%">
+           <div id="leftMenuContainer">
+                <div id="leftMenu">
+                     <div class="linkContainer">
+                        <a class="navLink" href="{{ url_for('engine_wagon_overview') }}">Triebkraftwagenübersicht</a>
+                        <a class="navLink" href="{{ url_for('passenger_wagon_overview') }}">Personenwagenübersicht</a>
+                        <a class="navLink" href="{{ url_for('train_overview') }}">Flottenübersicht</a>
+                         {% if current_user.is_admin() %}
+                             <a class="navLink" href="{{ url_for('maintenance_overview') }}">Wartungsübersicht</a>
+                             <a class="navLink" href="{{ url_for('user_create') }}">Benutzeranlage</a>
+                          {% else  %}
+                             <a class="navLink" href="{{ url_for('maintenance_employee') }}">Meine Wartungen</a>
+                         {% endif %}
+                     </div>
+                </div>
+           </div>
+            <div style="flex: 1 1 80%; height:100%">
+                <div id="logoutContainer">
+                    {% if current_user.is_anonymous %}
+                        <a href="{{ url_for('login') }}">Login</a>
+                    {% else %}
+                        <a class="logoutButton" href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
+                </div>
+                <div id="rightOptionsContainer">
+                    <div id="rightOptions">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+       </div>
+    </body>
+</html>

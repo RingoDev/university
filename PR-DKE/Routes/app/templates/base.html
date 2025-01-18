@@ -1,0 +1,59 @@
+<html>
+<link rel="stylesheet" href="/static/stylesheet.css">
+
+    <head>
+        {% if title %}
+        <title>{{ title }} - station</title>
+        {% else %}
+        <title>Routes</title>
+        {% endif %}
+    </head>
+<body>
+     <div style="display: flex;flex-direction: row; height:100%">
+           <div id="leftMenuContainer">
+                <div id="leftMenu">
+                     <div class="linkContainer">
+                        <a class="navLink" href="{{ url_for('station') }}">New Station</a><br><br>
+                        <a class="navLink" href="{{ url_for('station_overview') }}">Station Overview</a><br><br>
+                         <a class="navLink" href="{{ url_for('section') }}">New Section</a><br><br>
+                         <a class="navLink" href="{{ url_for('section_overview') }}">Section Overview</a><br><br>
+                        <a class="navLink" href="{{ url_for('route') }}">New Route</a><br><br>
+                        <a class="navLink" href="{{ url_for('route_overview') }}">Route Overview</a><br><br>
+                        <a class="navLink" href="{{ url_for('warning') }}">New Warning</a><br><br>
+
+                        <a class="navLink" href="{{ url_for('index') }}">Home</a><br><br>
+                        <a class="navLink" href="{{ url_for('register') }}">New User</a><br><br>
+
+                    </div>
+                </div>
+           </div>
+    <div style="flex: 1 1 80%; height:100%">
+                <div id="logoutContainer">
+                        {% if current_user.is_anonymous %}
+                            <a href="{{ url_for('login') }}">Login</a><br><br>
+                        {% else %}
+                            <a class="logoutButton" href="{{ url_for('logout') }}">Logout</a><br><br>
+                        {% endif %}
+                </div>
+                <div id="rightOptionsContainer">
+                    <div id="rightOptions">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+    </div>
+     </div>
+
+
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+</body>
+</html>

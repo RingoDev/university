@@ -1,0 +1,63 @@
+{% extends "application_base.html" %}
+
+{% block content %}
+
+    <a href="{{ url_for("trips_list") }}">Übersicht</a>
+
+    <h1>Fahrtansicht</h1>
+
+    <table class="tripTable">
+        <tr>
+            <td>ID:</td>
+            <td>{{ trip.id }}</td>
+        </tr>
+        <tr>
+            <td>Strecke:</td>
+            <td>
+                <a href="{{ url_for("route_show", route_id=trip.get_route().id) }}">
+                    {{ trip.get_route().stops[0].station.name }}
+                    - {{ trip.get_route().stops[-1].station.name }}</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Datum:</td>
+            <td>
+                {{ trip.departure.strftime("%d.%m.%Y") }}    </td>
+        </tr>
+        <tr>
+            <td>Abfahrt:</td>
+            <td>
+                {{ trip.departure.strftime("%H:%M") }}      </td>
+        </tr>
+        {% if current_user.is_admin() %}
+            <tr>
+                <td>Preis:</td>
+                <td>{{ trip.get_price_as_euro_string() }}</td>
+            </tr>
+            <tr>
+                <td>Zug:</td>
+                <td>{{ trip.get_train().id if trip.train_id is not none }}</td>
+            </tr>
+            <tr>
+                <td>Mitarbeiter:</td>
+                <td>
+                    {% for employee in trip.employees %}
+                        <div>
+                            <a href="{{ url_for("employee_show", employee_id=employee.id) }}">
+                                {{ employee.first_name }} {{ employee.last_name }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endif %}
+    </table>
+    {% if current_user.is_admin() %}
+        <hr/>
+        <div style="display: flex; justify-content: space-between">
+            <a href="{{ url_for("trip_edit",trip_id=trip.id) }}">Fahrt bearbeiten</a>
+            <a href="{{ url_for("trip_delete",trip_id=trip.id) }}">Fahrt löschen</a>
+        </div>
+    {% endif %}
+
+{% endblock %}

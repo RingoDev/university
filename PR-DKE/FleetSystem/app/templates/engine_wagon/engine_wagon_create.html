@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h3>Triebkraftwagen erstellen</h3>
+    </div>
+    <form id="railway_wagon" action="{{url_for('engine_wagon_create')}}" method="post">
+     <div>
+         <label id="name">Bezeichnung: </label>
+         <input class="inputField" type="text" name="Bezeichnung">
+     </div>
+     <div>
+         <label for="track_width">Spurweite: </label>
+         <select class="inputField" name="Spurweite" id="track_width">
+             <option value='M'>Meterspur</option>
+             <option value='S'>Schmalspur</option>
+         </select>
+     </div>
+     <div>
+         <label id="max_traction">Maximale Zugkraft: </label>
+         <input class="inputField" type="number" name="Max. Zugkraft">
+     </div>
+        <button class="submitButton" type="submit">Triebkraftwagen erstellen</button>
+    </form>
+        {% if success is not none and success == True %}
+            <h4>Triebkraftwagen {{ engine_wagon }} angelegt!</h4>
+        {% endif %}
+{% endblock %}

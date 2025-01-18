@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de" style="height: 100%">
+
+<link rel="stylesheet" href="/static/style.css">
+
+<head>
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title></title>
+    {% endif %}
+</head>
+<body style="height: 100%;margin:0">
+<div style="display: flex;flex-direction: row; height:100%; max-width: 1280px">
+    <div id="leftMenuContainer">
+        <div id="leftMenu">
+            {% if current_user.is_admin() %}
+                <div style="padding:5rem 0; display: flex; justify-content: center">
+                    <a href="{{ url_for('routes_list') }}">
+                        <button class="navButton {{ "active" if request.path.startswith(url_for('routes_list')) }}">
+                            Strecken
+                        </button>
+                    </a>
+                </div>
+            {% endif %}
+            <div style="padding:5rem 0; display: flex; justify-content: center">
+                <a href="{{ url_for('trips_list') }}">
+                    <button class="navButton {{ "active" if request.path.startswith(url_for('trips_list')) }}">
+                        Fahrten
+                    </button>
+                </a>
+            </div>
+            {% if current_user.is_admin() %}
+                <div style="padding:5rem 0; display: flex; justify-content: center">
+                    <a href="{{ url_for('employees_list') }}">
+                        <button class="navButton {{ "active" if request.path.startswith(url_for('employees_list')) }}">
+                            Mitarbeiter
+                        </button>
+                    </a>
+                </div>
+            {% endif %}
+            {% if not current_user.is_admin() %}
+                <div style="padding:5rem 0; display: flex; justify-content: center">
+                    <a href="{{ url_for('show_work_schedule') }}">
+                        <button class="navButton {{ "active" if request.path.startswith(url_for('show_work_schedule')) }}">
+                            Arbeitsplan
+                        </button>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div style="flex: 1 1 80%; height:100%">
+        <div style="text-align: right; padding:0.5rem">
+            <a href="{{ url_for('logout') }}">
+                <button class="logoutButton">
+                    Logout
+                </button>
+            </a>
+        </div>
+        <div id="rightOptionsContainer">
+            <div id="rightOptions">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

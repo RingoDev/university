@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+    <h1>Routes:</h1>
+    </div>
+
+<table>
+        <thead style="border-radius: 0.5rem">
+            <tr class="tableHeader">
+        <th>ID </th>
+        <th>startStation</th>
+        <th>endStation</th>
+        <th>sections</th>
+        <th>warning</th>
+        <th></th>
+    </tr>
+        </thead>
+<tbody>
+    {% for route in routes %}
+    <tr class="tableContent">
+    <td> {{ route.id }} </td>
+    <td> {{ route.startStation }}</td>
+    <td> {{ route.endStation }}</td>
+        <td>{% for section in route.routeSection.all() %}
+            {{ section.name }}
+        {% endfor %}</td>
+
+            <td>{% for section in route.routeSection.all() %}
+                    {% for w in warning %}
+
+                        {% if section.name == w.section and loop.first%}
+                            <button onclick="window.location.href='{{ url_for('warning_detail', routeID =  route.id) }}';"> Detail </button>
+                        {% endif %}
+                    {% endfor %}
+
+        {% endfor %}</td>
+    <td> <button onclick="window.location.href='{{ url_for('route_edit', routeID =  route.id) }}';"> Bearbeiten </button></td> <td>
+        <button onclick="window.location.href='{{ url_for('route_delete', routeID =  route.id) }}';"> Löschen </button> </td>
+
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+    </div>
+{% endblock %}

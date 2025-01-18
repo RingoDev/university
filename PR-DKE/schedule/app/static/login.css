@@ -1,0 +1,30 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+button {
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+}
+
+h1 {
+    color: white;
+}
+
+body {
+    background-color: #333333;
+}
+
+.card {
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: #797676;;
+}
+
+input{
+    border-radius: 0.25rem;
+    border: none;
+    line-height: 1.125rem;
+}

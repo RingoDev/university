@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+    <h1>Sections: </h1>
+    </div>
+
+   <table>
+           <thead style="border-radius: 0.5rem">
+
+    <tr class="tableHeader">
+        <th>ID </th>
+        <th>Name </th>
+        <th>startStation</th>
+        <th>endStation</th>
+        <th>distance</th>
+                <th>maxSpeed</th>
+                <th>width</th>
+                <th>usageFee</th>
+                <th>warning</th>
+        <th></th>
+    </tr>
+    </thead>
+<tbody>
+    {% for section in sections %}
+    <tr class="tableContent">
+    <td> {{ section.id }} </td>
+    <td> {{ section.name }}</td>
+    <td> {{ section.startStation }}</td>
+    <td> {{ section.endStation }}</td>
+    <td> {{ section.distance }}</td>
+        <td> {{ section.maxSpeed }}</td>
+        <td> {{ section.width }}</td>
+        <td> {{ section.usageFee }}</td>
+        <td>{% for w in warning %}
+           {%  if section.name == w.section %}
+                     {{ w.description }}
+
+            {% endif %}
+        {% endfor %}</td>
+    <td> <button onclick="window.location.href='{{ url_for('section_edit', sectionName =  section.name) }}';"> Bearbeiten </button></td> <td> <button onclick="window.location.href='{{ url_for('section_delete', sectionName =  section.name) }}';"> Löschen </button> </td>
+
+
+    </tr>
+
+            {% endfor %}
+</tbody>
+   </table>
+{% endblock %}

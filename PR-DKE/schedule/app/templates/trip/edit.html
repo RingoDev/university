@@ -1,0 +1,83 @@
+{% extends "application_base.html" %}
+
+{% block content %}
+    <a href="{{ url_for("trip_show", trip_id=trip.id) }}">Zurück</a>
+    <h1>Fahrtansicht</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <table class="tripTable">
+            <tr>
+                <td>ID:</td>
+                <td>{{ trip.id }}</td>
+            </tr>
+            <tr>
+                <td>Strecke:</td>
+                <td>
+                    <a href="{{ url_for("route_show", route_id=trip.get_route().id) }}">
+                        {{ trip.get_route().stops[0].station.name }}
+                        - {{ trip.get_route().stops[-1].station.name }}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Datum:</td>
+                <td>
+                    {{ trip.departure.strftime("%d.%m.%Y") }}    </td>
+            </tr>
+            <tr>
+                <td>Abfahrt:</td>
+                <td>
+                    {{ trip.departure.strftime("%H:%M") }}      </td>
+            </tr>
+            {% if current_user.is_admin() %}
+                <tr>
+                    <td>
+                        {{ form.price.label }}
+                    </td>
+                    <td>
+                        {{ form.price() }}
+                        {% for error in form.price.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ form.train.label }}
+                    </td>
+                    <td>
+                        {{ form.train() }}
+                        {% for error in form.train.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        {#                        <select id="train" name="train">#}
+                        {#                            <option {{ "selected" if trip.train_id is none }} value="">-</option>#}
+                        {#                            {% for train in trains %}#}
+                        {#                                <option {{ "selected" if train.id == trip.train_id }}#}
+                        {#                                        value="{{ train.id }}">{{ train.id }}</option>#}
+                        {#                            {% endfor %}#}
+                        {#                        </select>#}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ form.employees.label }}
+                    </td>
+                    <td>
+                        {{ form.employees() }}
+                        {% for error in form.employees.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        {#                        <select name="employee" id="employees" multiple size="{{ [employees|length,4]|min }}">#}
+                        {#                            {% for employee in employees %}#}
+                        {#                                <option {{ "selected" if employee in trip.employees }} value="{{ employee.id }}">#}
+                        {#                                    {{ employee.first_name }} {{ employee.last_name }}#}
+                        {#                                </option>#}
+                        {#                            {% endfor %}#}
+                        {#                        </select>#}
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+        {{ form.submit() }}
+    </form>
+{% endblock %}

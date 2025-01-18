@@ -1,0 +1,6 @@
+{% extends "application_base.html" %}
+
+{% block content %}
+    <h1>Hallo, {{ current_user.username }}!</h1>
+    <p>Du bist als {{ "Admin " if  current_user.is_admin() else "Mitarbeiter " }}eingeloggt!</p>
+{% endblock %}

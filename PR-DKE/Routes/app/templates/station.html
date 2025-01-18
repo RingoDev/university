@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div style="display: flex; flex-direction: row; justify-content: space-between">
+            <h1>Station</h1>
+        </div>
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+    <table>
+        <tr><td>{{ form.designation.label }}:</td><td>{{ form.designation(size=32) }}</td> </tr>
+        <tr><td>{{ form.road.label }}:</td><td>{{ form.road(size=32) }}</td> </tr>
+        <tr><td>{{ form.place.label }}:</td><td>{{ form.place(size=32) }}</td> </tr>
+        <tr><td>{{ form.postal.label }}:</td><td>{{ form.postal(size=32) }}</td> </tr>
+
+
+        <tr><td colspan="2">{{ form.submit() }}</td> </tr>
+
+    </table>
+    </form>
+        </div>
+{% endblock %}

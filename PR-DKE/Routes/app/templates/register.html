@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="body">
+    <h1>Create new User</h1>
+    </div>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+    <table>
+        <tr class="tableContent"><td>{{ form.username.label }}:</td><td>{{ form.username(size=32) }}</td> </tr>
+        <tr class="tableContent"><td>{{ form.email.label }}:</td><td>{{ form.email(size=64) }}</td> </tr>
+        <tr class="tableContent"><td>{{ form.password.label }}:</td><td>{{ form.password(size=32) }}</td> </tr>
+        <tr class="tableContent"><td>{{ form.password2.label }}:</td><td>{{ form.password2(size=32) }}</td> </tr>
+        <tr class="tableContent"><td>{{ form.role.label }}:</td><td>{{ form.role }}</td> </tr>
+
+
+
+        <tr><td colspan="2">{{ form.submit() }}</td> </tr>
+</td> </tr>
+
+    </table>
+
+    </form>
+    </div>
+{% endblock %}

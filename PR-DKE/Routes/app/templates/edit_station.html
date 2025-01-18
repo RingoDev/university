@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div id="body">
+
+    <h1>Edit Station</h1>
+
+    <form action="" method="post" novalidate>
+
+        {{ form.hidden_tag() }}
+
+       <table>
+        <tr><td>{{ form.designation.label }}:</td><td>{{ form.designation(size=32) }}</td> </tr>
+        <tr><td>{{ form.road.label }}:</td><td>{{ form.road(size=32) }}</td> </tr>
+        <tr><td>{{ form.place.label }}:</td><td>{{ form.place(size=32) }}</td> </tr>
+        <tr><td>{{ form.postal.label }}:</td><td>{{ form.postal(size=32) }}</td> </tr>
+
+
+        <tr><td colspan="2">{{ form.submit() }}</td> </tr>
+
+    </table>
+    </form>
+        </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h3>Zug anlegen: Triebkraftwagen und Personenwaggons kombinieren</h3>
+    </div>
+    <form id="train" action="{{url_for('train_create')}}" method="post">
+     <div>
+         <label id="number">Nummer: </label>
+         <input class="inputField" type="number" name="Zugnummer">
+     </div>
+    <div>
+      <label for="engine_wagon">Triebkraftwagen: </label>
+        <select class="inputField" name="Triebkraftwagen" id="engine_wagon">
+            {% for engine_wagon in engine_wagons %}
+                <option {{ "selected" }} value="{{ engine_wagon.id }}" > {{ engine_wagon.name }} - Spurweite {{ engine_wagon.track_width }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="passenger_waggons">Personenwaggons: </label>
+        <select name="Personenwaggons" id="passenger_waggons" multiple size="{{ [passenger_wagons|length,4]|min }}">
+            {% for passenger_wagon in passenger_waggons %}
+            <option {{ "selected" }} value="{{ passenger_wagon.id }}">{{ passenger_wagon.name }} - Spurweite {{ passenger_wagon.track_width }}</option>
+            {% endfor %}
+        </select>
+    </div>
+          <button class="submitButton" type="submit">Zug erstellen</button>
+    </form>
+        {% if success is not none and success == True %}
+            <h3>Zug {{ train }}angelegt!</h3>
+            {% elif success == False %}
+            <h3>Fehler: Waggons müssen die gleiche Spurweite haben</h3>
+        {% endif %}
+{% endblock %}

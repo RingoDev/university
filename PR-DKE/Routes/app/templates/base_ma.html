@@ -1,0 +1,49 @@
+<html>
+<link rel="stylesheet" href="/static/stylesheet.css">
+
+    <head>
+        {% if title %}
+        <title>{{ title }} - station</title>
+        {% else %}
+        <title>Routes</title>
+        {% endif %}
+    </head>
+<body></body>
+ <div style="display: flex;flex-direction: row; height:100%">
+           <div id="leftMenuContainer">
+                <div id="leftMenu">
+                            <div class="linkContainer">
+
+                    <a class="navLink"  href="{{ url_for('station_ma_overview') }}">Station Overview</a><br><br>
+
+                <a class="navLink"  href="{{ url_for('route_ma_overview') }}">Route Overview</a><br><br>
+                  </div>
+                </div>
+           </div>
+    <div style="flex: 1 1 80%; height:100%">
+                <div id="logoutContainer">
+                                {% if current_user.is_anonymous %}
+      <a href="{{ url_for('login') }}">Login</a><br><br>
+      {% else %}
+      <a class="logoutButton" href="{{ url_for('logout') }}">Logout</a><br><br>
+      {% endif %}
+    </div>
+    <div id="rightOptionsContainer">
+                    <div id="rightOptions">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+        </div>
+     </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
+        <h1>Ticket reservieren</h1>
+        <div style="display: flex; align-items: center">
+            <a class="siteLink" href="{{ url_for('tickets') }}">zurück zur Ticketübersicht</a>
+        </div>
+    </div>
+    <div id="searchContainer">
+        <p>Wollen Sie eine Reservierung für das Ticket von > <label style="font-weight: bold">{{ trip.stops[0].station.name }} - {{ trip.stops[-1].station.name }}</label> <  buchen?</p>
+        <form>
+            <a href="{{ url_for('tickets') }}"><button class="submitButton">Abbrechen</button></a>
+            <button type="submit" formaction="{{ url_for('tickets_reservate', ticket_id=ticket_id) }}" formmethod="post" class="submitButton" >Reservieren</button>
+        </form>
+    {% if success is not none and success == True %}
+        <h3>Sie haben erfolgreich eine Reservierung für Ihr Ticket gebucht!</h3>
+    {% elif success is not none and success == False %}
+        <p>Leider sind alle Sitzreservierungen für die Fahrt von > <label style="font-weight: bold">{{ trip.stops[0].station.name }} - {{ trip.stops[-1].station.name }}</label> <  ausgebucht!!</p>
+        <p>Das heißt, Sie können für diese Fahrt keinen Sitzplatz mehr reservieren.</p>
+    {% endif %}
+    </div>
+{% endblock %}
