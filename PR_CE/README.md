@@ -1,0 +1,1 @@
+Robotics project to control a dobot robot to accomplish simple tasks programmitcally via REST API
