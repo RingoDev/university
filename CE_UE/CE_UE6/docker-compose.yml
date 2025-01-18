@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  suppliers:
+    build: ./supplier
+    image: "ringodev/ce-suppliers:latest"
+  accounting:
+    build: ./accounting
+    image: "ringodev/ce-accountiing:latest"
+    volumes:
+      - type: bind
+        source: ./accounting/fibu
+        target: /usr/app/fibu
+    expose:
+      - "1099"
+  factory:
+    build: ./factory
+    image: "ringodev/ce-factory:latest"
+    volumes:
+      - type: bind
+        source: ./factory/data/
+        target: /data/
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=/data/producer
+      - SPRING_PROFILES_ACTIVE=production
+  webpage:
+    build: ./webpage
+    image: "ringodev/ce-webpage:latest"
+    ports:
+      - "3000:3000"
+volumes:
+  fibu:
+
